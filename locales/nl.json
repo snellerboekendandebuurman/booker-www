@@ -1,0 +1,216 @@
+{
+    "global": {
+        "get_started": "Aan de slag",
+        "pricing": "Prijs",
+        "or": "of",
+        "save": "Opslaan",
+        "saving": "Opslaan",
+        "delete": "Verwijder",
+        "deleting": "Verwijderen",
+        "cancel": "Annuleer",
+        "cancelling": "Annuleren",
+        "open": "Open",
+        "opening": "Openen",
+        "close": "Sluiten",
+        "next": "Volgende",
+        "previous": "Vorige",
+        "exit": "Sluiten",
+        "header": {
+            "links": {
+                "login": "Login",
+                "switch_language": "Wissel taal",
+                "switch_theme": "Wissel thema"
+            }
+        },
+        "messages": {
+            "loading": "Laden",
+            "success": "Success",
+            "something_went_wrong": "Er ging iets fout",
+            "unhandeled_error": "Onbehandelde fout",
+            "unhandeled_response": "Onbehandeld antwoord",
+            "status_200": "Ok",
+            "status_201": "Aangemaakt",
+            "status_202": "In behandeling",
+            "status_400": "Ongeldig verzoek",
+            "status_403": "Niet toegestaan om deze actie uit te voeren",
+            "status_404": "Niet gevonden",
+            "status_420": "Te veel requests, probeer het later nog een keertje",
+            "field_email_required": "Email is verplicht",
+            "field_email_invalid": "Ongeldig email",
+            "field_first_name_required": "Voornaam is verplicht",
+            "field_last_name_required": "Achternaam is verplicht",
+            "field_password_required": "Wachtwoord is verplicht",
+            "field_password_too_short": "Wachtwoord is te kort (minimaal 10 karakters)",
+            "field_terms_of_service": "Servicevoorwaarden moeten geaccepteerd worden",
+            "field_client_id_required": "Client is verplicht",
+            "field_authentication_method_id_required": "Authenticatie methode is verplicht",
+            "field_club_id_required": "Club is verplicht",
+            "field_club_number_required": "Club nummer is verplicht",
+            "field_association_number_required": "Vereneging nummer is verplicht",
+            "field_membership_id_required": "Lidmaatschap is verplicht",
+            "field_sports_type_required": "Sport is verplicht",
+            "registered": "Email is nog niet geverifiëerd",
+            "change_email_requested": "Email veranderen is reeds aangevraagd, volg de stappen in je email",
+            "setup_intent_success_title": "Succes",
+            "setup_intent_success_message": "Betaal informatie succesvol opgeslagen",
+            "player_1_unique": "Spelen 1 moet uniek zijn'",
+            "player_2_unique": "Spelen 2 moet uniek zijn",
+            "player_3_unique": "Spelen 3 moet uniek zijn",
+            "player_4_unique": "Spelen 4 moet uniek zijn",
+            "player_1_required": "Speler 1 is verplicht",
+            "player_2_required": "Speler 2 is verplicht",
+            "player_3_required": "Speler 3 is verplicht",
+            "player_4_required": "Speler 4 is verplicht",
+            "schedule_date_required": "Geplande datum is verplicht",
+            "reservation_date_required": "Reserverings datum is verplicht",
+            "reservation_date_future": "Reservering moet later plaatsvinden dan de geplande uitvoering",
+            "auto_logout": "{message} Automatisch uit-loggen in 5 seconden",
+            "no_token_title": "Geen token meegeleverd",
+            "no_token_message": "Er is geen token meegeleverd om te verifieren."
+        },
+        "fields": {
+            "email_address": "E-mailadres",
+            "email_address_old": "Huidog e-mailadres",
+            "email_address_new": "Nieuw e-mailadres",
+            "first_name": "Voornaam",
+            "last_name": "Achternaam",
+            "password": "Wachtwoord",
+            "password_old": "Huidig wachtwoord",
+            "password_new": "Nieuw wachtwoord",
+            "accepts_terms": "Accepteer algemene voorwaarden",
+            "download_terms": "Download algemene voorwaarden",
+            "change_image": "Verander foto",
+            "image_size": "JPG, GIF of PNG. 10MB max.",
+            "club_number": "Club nummer",
+            "association_number": "Bond nummer",
+            "client": "Selecteer een client",
+            "authentication_method": "Selecteer een Authenticatie methode",
+            "select_club": "Zoek een club",
+            "select_client": "Selecteer een client",
+            "select_authentication_method": "Selecteer een authenticatie metode",
+            "select_client_first": "Selecteer eerst een client",
+            "select_membership_first": "Selecteer eerst een lidmaatshap",
+            "select_sports_type": "Selecteer een sport",
+            "sports_type": "Sport",
+            "select_membership": "Selecteer een lidmaatschap",
+            "membership": "Lidmaatschap",
+            "select_player_1": "Zoek speler #1",
+            "select_player_2": "Zoek speler #2",
+            "select_player_3": "Zoek speler #3",
+            "select_player_4": "Zoek speler #4",
+            "reservation_time": "Selecteer wanneer je een baan wil",
+            "schedule_time": "Selecteer wanneer we kunnen reserveren"
+          }
+    },
+    "home": {
+        "hero_leading_text": "De flitshandelaar voor jouw favouriete vrijetijdsbesteding.",
+        "hero_helper_text":"Dit keer is het gras niet groener bij de buurman, laat het kaas je niet van je brood eten!"
+    },
+    "pricing": {
+        "hero_leading_text": "Leuker kunnen we het niet maken, wel makkelijker",
+        "hero_helper_text":"Betaal per succesvolle reservering, niet per maand.",
+        "card_leading_text": "Betaal alleen als de reservering succesvol is",
+        "card_helper_text": "Er wordt alleen geld in rekening gebracht op het moment dat een reservering succesvol is afgerond, niet meer, niet minder.",
+        "card_benefits_text": "Wat houdt dat in:",
+        "card_benefit_1": "Reserveer zo veel (of weinig) als je wilt",
+        "card_benefit_2": "Betaal alleen per succesvolle reservering",
+        "card_benefit_3": "Bevestigings email vanuit snellerboekendandebuurman",
+        "card_benefit_4": "Plan je reservering vooruit",
+        "card_price_text": "Prijs per succesvolle reservering",
+        "card_email_text": "U ontvang een bevestiging email met alle informatie na een succesvolle reservering."
+    },
+    "auth": {
+        "home": "Thuis",
+        "login": {
+            "login": "Login",
+            "logging_in": "Inloggen",
+            "non_existing_user": "No geen account?",
+            "up_to_date": "Blijf up-to-date!",
+            "keep_me_posted": "Hou me op de hoogte!",
+            "home": "Thuis",
+            "not_a_member": "Nog geen lid?",
+            "register_here": "Registreer hier"
+        },
+        "register": {
+            "create_new_account": "Nieuwe gebruiker",
+            "existing_user": "Al een bestaande gebruiker?",
+            "login_here": "Login hier",
+            "up_to_date": "Blijf up-to-date!",
+            "keep_me_posted": "Hou me op de hoogte!!",
+            "home": "Thuis",
+            "register": "Registreer",
+            "reset_password": "Wachtwoord vergeten",
+            "reset_email": "Verander email",
+            "verify_email": "Email verifiëren"
+        },
+        "reset_password": {
+            "request_password_reset": "Wachtwoord herstellen aanvragen",
+            "request": "Wachtwoord herstellen",
+            "requesting": "Aanvragen",
+            "reset_password": "Herstel Password",
+            "enter_new_password": "Nieuw wachtwoord invullen"
+          },
+          "reset_email": {
+            "reset_email": "Verander Email",
+            "resetting_email": "Email veranderen"
+          },
+          "request_verify_email": {
+            "new_verification_email": "Nieuwe verificatie Email",
+            "request_verify_email": "Nieuwe e-mailadres verificatie email",
+            "request": "Stuur email",
+            "requesting": "Email versturen"
+          }
+    },
+    "platform": {
+        "sidebar": {
+            "reservations": "Reseveringen",
+            "memberships": "Lidmaatschappen"
+        },
+        "topbar": {
+            "settings": "Instellingen",
+            "logout": "Uitloggen"
+        },
+        "billing": {
+            "logout": "Uitloggen",
+            "setup_payment_intent": "Maak betalingsintentie",
+            "setting_up_payment_intent": "Betalingsintentie maken"
+        },
+        "memberships": {
+            "add_membership": "Nieuw lidmaatschap",
+            "delete_membership_confirmation_title": "Verwijder lidmaatshap",
+            "delete_membership_confirmation_text":"Weet u zeker dat u dit lidmaatschap wil verwijderen? Deze actie is onomkeerbaar.",
+            "step_select_membership": "Selecteer Lidmaatschap",
+            "step_add_credentials":"Gegevens toevoegen"
+        },
+        "reservations": {
+            "new_reservation": "Nieuwe reservering",
+            "details": "Details",
+            "players": "Spelers",
+            "dates": "Datums",
+            "scheduled_time": "Gepland op:",
+            "reservation_time": "Reserveren op:",
+            "cancel_reservation_confirmation_title": "Annuleer reservering",
+            "cancel_reservation_confirmation_text": "Weet u zeker dat u deze reservering wil annuleren? Deze actie is onomkeerbaar."
+        },
+        "settings": {
+            "delete_account": "Ja, verwijder account",
+            "deleting_account": "Account verwijderen",
+            "change_email_request": "Verander Email",
+            "change_email_sending": "Email verzendem",
+            "delete_session": "Verwijder sessie",
+            "deleting_session": "Sessie verwijderen",
+            "billing_portal_title": "Betaal portaal",
+            "billing_portal_text": "Bekijk de huidige instelling omtrent betalingen & betaal opties via het Stripe betaal portaal",
+            "platform_preferences_title": "Platform instellingen",
+            "platform_preferences_text": "Instellingen die effect hebben op het platform.",
+            "change_email_title": "Verander e-mailadres",
+            "change_email_text": "Vraag een link aan waarmee het huidige e-mailadres kan worden veranderd.",
+            "delete_account_title": "Verwijder account",
+            "delete_account_text": "Wilt u niet langer gebruik maken van ons platform? Hier kunt u uw account verwijderen, dit is een niet omkeerbare actie, waarbij alle data en gegevens verwijderd zullen worden.",
+            "personal_information_title": "Persoonlijke informatie",
+            "personal_information_text": "Verander uw persoonlijke informatie hier.",
+            "change_password_title": "Verander wachtwoord",
+            "change_password_text": "Verander uw wachtwoord dat bij dit account hoort. Dit forceert ieder apparaat om opnieuw in te loggen."
+          }
+    }
+}
