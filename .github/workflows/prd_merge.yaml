@@ -27,8 +27,8 @@ jobs:
   #     - name: Build && Deploy
   #       uses: ./.github/actions/deploy_actions
   #       with:
-  #         aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
-  #         aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+  #         aws_access_key_id: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_ACCESS_KEY_ID }}
+  #         aws_secret_access_key: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
   #         aws_region: eu-west-3
   #         node_version: 19
   #         s3_bucket: ${{ secrets.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET }}
@@ -47,7 +47,7 @@ jobs:
       - name: Format, Validate, Plan & Apply Terraform
         uses: ./.github/actions/terraform_actions
         with:
-          aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws_access_key_id: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
           aws_region: eu-west-3
           environment: prd
