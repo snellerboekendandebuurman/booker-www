@@ -23,6 +23,18 @@ logs
 .env.*
 !.env.example
 
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
