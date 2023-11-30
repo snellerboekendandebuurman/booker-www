@@ -55,45 +55,45 @@ export interface IUserService {
   userLoginRefreshToken(): TypePromiseApiResponse;
   userLogout(params: ParamsUserLogoutApi): TypePromiseApiResponse;
   userRequestPasswordReset(
-    params: ParamsRequestPasswordResetApi
+    params: ParamsRequestPasswordResetApi,
   ): TypePromiseApiResponse;
   userVerifyPasswordReset(
-    params: ParamsVerifyPasswordResetApi
+    params: ParamsVerifyPasswordResetApi,
   ): TypePromiseApiResponse;
   userRequestEmailReset(
-    params: ParamsRequestEmailResetApi
+    params: ParamsRequestEmailResetApi,
   ): TypePromiseApiResponse;
   userVerifyEmailReset(
-    params: ParamsVerifyEmailResetApi
+    params: ParamsVerifyEmailResetApi,
   ): TypePromiseApiResponse;
   userRequestEmailVerify(
-    params: ParamsRequestEmailVerifyApi
+    params: ParamsRequestEmailVerifyApi,
   ): TypePromiseApiResponse;
   getAuthenticatedUser(): TypePromiseApiResponse;
   patchAuthenticatedUser(
-    params: ParamsPatchAuthenticatedUserApi
+    params: ParamsPatchAuthenticatedUserApi,
   ): TypePromiseApiResponse;
   deleteAuthenticatedUser(
-    params: ParamsDeleteAuthenticatedUserApi
+    params: ParamsDeleteAuthenticatedUserApi,
   ): TypePromiseApiResponse;
   patchAuthenticatedUserSettings(
-    params: ParamsPatchAuthenticatedUserSettingsApi
+    params: ParamsPatchAuthenticatedUserSettingsApi,
   ): TypePromiseApiResponse;
 
   _handleSuccessfullLogin(
     apiResponse: ApiResponseSuccessfullLogin,
-    message: DataHandleResponse
+    message: DataHandleResponse,
   ): void;
   _handleSuccessfullRefreshTokenLogin(
     apiResponse: ApiResponseSuccessfullRefreshTokenLogin,
     redirect: boolean,
-    message?: DataHandleResponse
+    message?: DataHandleResponse,
   ): RouteLocationRaw | Promise<void | NavigationFailure> | undefined;
   _redirectSuccessfullLogin(
-    subscsetupIntentribed: boolean
+    subscsetupIntentribed: boolean,
   ): RouteLocationRaw | Promise<void | NavigationFailure>;
   _handleAuthenticatedUserResponse(
-    apiResponse: ApiResponseAuthenticatedUser
+    apiResponse: ApiResponseAuthenticatedUser,
   ): void;
   _handleUnsuccessfullLogin(responseMessage: DataHandleResponse): void;
   _errorResponseMessages(accountStatus: string): [DataButtonInfo[], string?];

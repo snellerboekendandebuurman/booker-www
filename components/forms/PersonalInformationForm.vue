@@ -55,10 +55,10 @@ const submitInProgress = ref(false);
 
 const schema = object().shape({
   first_name: string().required(() =>
-    t("global.messages.field_first_name_required")
+    t("global.messages.field_first_name_required"),
   ),
   last_name: string().required(() =>
-    t("global.messages.field_last_name_required")
+    t("global.messages.field_last_name_required"),
   ),
 });
 
@@ -114,14 +114,14 @@ const onSubmit = handleSubmit(async (values) => {
       title: message.title,
       message: message.message,
       status: message.status,
-    })
+    }),
   );
   if (message.status !== EApiResponseStatus.success) {
     return;
   }
 
   userService._handleAuthenticatedUserResponse(
-    response.data.value as ApiResponseAuthenticatedUser
+    response.data.value as ApiResponseAuthenticatedUser,
   );
 });
 </script>

@@ -18,8 +18,16 @@ import SidebarDesktop from "./locals/SidebarDesktop.vue";
 import SidebarMobile from "./locals/SidebarMobile.vue";
 
 const links = [
-  { text: "platform.sidebar.memberships", to: "/platform/membership", icon: UsersIcon },
-  { text: "platform.sidebar.reservations", to: "/platform/reservation", icon: ClipboardDocumentListIcon },
+  {
+    text: "platform.sidebar.memberships",
+    to: "/platform/membership",
+    icon: UsersIcon,
+  },
+  {
+    text: "platform.sidebar.reservations",
+    to: "/platform/reservation",
+    icon: ClipboardDocumentListIcon,
+  },
 ];
 interface Props {
   sidebarOpen: boolean;

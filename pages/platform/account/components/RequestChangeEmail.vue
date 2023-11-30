@@ -57,7 +57,7 @@ async function requestChangeEmail() {
       title: message.title,
       message: message.message,
       status: message.status,
-    })
+    }),
   );
 }
 </script>

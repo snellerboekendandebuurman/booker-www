@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx"
+import { makeAutoObservable } from "mobx";
 import { BasicColorSchema, useColorMode } from "@vueuse/core";
 import {
   ComputerDesktopIcon,
@@ -43,7 +43,7 @@ export class ThemeColorService implements IThemeColorService {
   ];
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   mode = useColorMode({

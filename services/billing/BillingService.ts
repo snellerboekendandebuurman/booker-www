@@ -4,7 +4,6 @@ import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
 import { BaseService } from "../base/BaseService";
 import { IBillingService } from "./IBillingService";
 
-
 export class BillingService extends BaseService implements IBillingService {
   /**
    * Class that holds all information regarding Billing.
@@ -22,9 +21,7 @@ export class BillingService extends BaseService implements IBillingService {
     makeAutoObservable(this, {}, { autoBind: true });
   }
 
-  async getStripeSetupIntent(
-    params: ParamsBaseApi
-  ): TypePromiseApiResponse {
+  async getStripeSetupIntent(params: ParamsBaseApi): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({
@@ -36,9 +33,7 @@ export class BillingService extends BaseService implements IBillingService {
     });
   }
 
-  async getStripeBillingPortal(
-    params: ParamsBaseApi
-  ): TypePromiseApiResponse {
+  async getStripeBillingPortal(params: ParamsBaseApi): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({

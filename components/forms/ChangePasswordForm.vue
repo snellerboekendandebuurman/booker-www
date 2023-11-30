@@ -98,7 +98,7 @@ const onSubmit = handleSubmit(async (values) => {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     return;
   }
@@ -112,7 +112,7 @@ const onSubmit = handleSubmit(async (values) => {
   modalMessageService.addModal({
     id: Math.random(),
     title: message.title,
-    message: t('global.messages.auto_logout', { message: message.message }),
+    message: t("global.messages.auto_logout", { message: message.message }),
     // message: `${message.message} Automatic logout within 5 seconds`,
     status: message.status,
     buttons: [

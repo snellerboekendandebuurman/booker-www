@@ -60,7 +60,7 @@ async function createStripeBillingPortalSession() {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     return;
   }

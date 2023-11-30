@@ -62,7 +62,7 @@ async function deleteAccount() {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     return;
   }
@@ -75,7 +75,7 @@ async function deleteAccount() {
   modalMessageService.addModal({
     id: Math.random(),
     title: message.title,
-    message: t('global.messages.auto_logout', { message: message.message }),
+    message: t("global.messages.auto_logout", { message: message.message }),
     status: message.status,
     buttons: [
       {

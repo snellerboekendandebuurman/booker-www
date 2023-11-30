@@ -3,16 +3,24 @@ import { ParamsBaseApi } from "../base/TypesBaseService";
 import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
 import { BaseService } from "../base/BaseService";
 import { IMembershipsService } from "./IMembershipsService";
+import {
+  ParamsGetClubs,
+  ParamsPostMemberAccount,
+  ApiResponseMembership,
+  ParamsDeleteMembership,
+} from "./TypeMembershipsService";
 import { DataClient } from "~/models/membership/DataClient";
 import { DataClubClub } from "~/models/membership/DataClub";
 import { DataMembership } from "~/models/membership/DataMembership";
 import { Client } from "~/models/membership/Client";
 import { Club } from "~/models/membership/Club";
-import { ParamsGetClubs, ParamsPostMemberAccount, ApiResponseMembership, ParamsDeleteMembership } from "./TypeMembershipsService";
 import { Membership } from "~/models/membership/Membership";
 import { IAuthenticationMethod } from "~/models/membership/IAuthenticationMethod";
 
-export class MembershipsService extends BaseService implements IMembershipsService {
+export class MembershipsService
+  extends BaseService
+  implements IMembershipsService
+{
   /**
    * Class that holds all information regarding the Memberships of the application.
    *
@@ -27,15 +35,21 @@ export class MembershipsService extends BaseService implements IMembershipsServi
   static MEMBER_ACCOUNT_ITEM_URL = `api/v1/member/account/{membershipId}/`;
   static MEMBER_ACCOUNTS_URL = `api/v1/member/accounts/`;
 
-  clients: Client[] = [new Client(
-    {"id": 0, "name": "Select a Client", "image": "", "authentiationMethods": []}
-  )];
+  clients: Client[] = [
+    new Client({
+      id: 0,
+      name: "Select a Client",
+      image: "",
+      authentiationMethods: [],
+    }),
+  ];
+
   selectedClient: Client | null = null;
 
-  clubs: Club[] = []
+  clubs: Club[] = [];
   selectedClub: Club | null = null;
 
-  memberships: Membership[] = []; 
+  memberships: Membership[] = [];
   selectedMembership: Membership | null = null;
 
   constructor() {
@@ -59,14 +73,22 @@ export class MembershipsService extends BaseService implements IMembershipsServi
     this.clubs = [];
   }
 
-  getAuthenticationMethod(clientId: number | string, authenticationMethodId: number | string): IAuthenticationMethod {
+  getAuthenticationMethod(
+    clientId: number | string,
+    authenticationMethodId: number | string,
+  ): IAuthenticationMethod {
     const client = this.getClient(clientId);
 
-    return client.authenticationMethods.find((authenticationMethod) => authenticationMethod.id === authenticationMethodId)!;
+    return client.authenticationMethods.find(
+      (authenticationMethod) =>
+        authenticationMethod.id === authenticationMethodId,
+    )!;
   }
 
   setMemberships(data: DataMembership[]) {
-    this.memberships = data.map((membershipData) => new Membership(membershipData));
+    this.memberships = data.map(
+      (membershipData) => new Membership(membershipData),
+    );
   }
 
   getMembership(id: number | string): Membership {
@@ -104,7 +126,9 @@ export class MembershipsService extends BaseService implements IMembershipsServi
     });
   }
 
-  async createMemberAccount(params: ParamsPostMemberAccount): TypePromiseApiResponse {
+  async createMemberAccount(
+    params: ParamsPostMemberAccount,
+  ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({
@@ -113,8 +137,8 @@ export class MembershipsService extends BaseService implements IMembershipsServi
       locale: params.locale,
       accessToken: true,
       refreshToken: true,
-      body: params.body
-    })
+      body: params.body,
+    });
   }
 
   async getMemberships(params: ParamsBaseApi): TypePromiseApiResponse {
@@ -126,10 +150,12 @@ export class MembershipsService extends BaseService implements IMembershipsServi
       locale: params.locale,
       accessToken: true,
       refreshToken: true,
-    })
+    });
   }
 
-  async deleteMembership(params: ParamsDeleteMembership): TypePromiseApiResponse {
+  async deleteMembership(
+    params: ParamsDeleteMembership,
+  ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({
@@ -152,7 +178,7 @@ export class MembershipsService extends BaseService implements IMembershipsServi
 
   _handleSuccesfullMembershipDeletion(membershipId: number | string) {
     const membershipIndex = this.memberships.findIndex(
-      (membership) => membership.id === membershipId
+      (membership) => membership.id === membershipId,
     );
 
     // Remove the membership from the list

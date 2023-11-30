@@ -47,11 +47,11 @@ if (!sessionId) {
   });
 
   setTimeout(() => {
-    navigateTo(localePath('/auth/login'));
+    navigateTo(localePath("/auth/login"));
   }, 5000);
 }
 
-const modalMessageId = Math.random()
+const modalMessageId = Math.random();
 // If success response -> handle
 modalMessageService.addModal({
   id: modalMessageId,
@@ -68,8 +68,8 @@ modalMessageService.addModal({
   ],
 });
 setTimeout(() => {
-  navigateTo(localePath('/auth/login'));
-  modalMessageService.removeModal(modalMessageId)
+  navigateTo(localePath("/auth/login"));
+  modalMessageService.removeModal(modalMessageId);
 }, 5000);
 const localePath = useLocalePath();
 </script>

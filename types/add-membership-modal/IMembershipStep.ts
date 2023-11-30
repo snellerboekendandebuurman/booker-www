@@ -1,8 +1,7 @@
 import { EStepStatus } from "./EStepStatus";
 
-
 export interface IMembershipStep {
-    id: number;
-    name: string
-    status: EStepStatus;
+  id: number;
+  name: string;
+  status: EStepStatus;
 }

@@ -68,7 +68,7 @@ const onSubmit = handleSubmit(async (values) => {
       title: message.title,
       message: message.message,
       status: message.status,
-    })
+    }),
   );
 
   resetForm();

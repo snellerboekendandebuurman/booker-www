@@ -1,4 +1,4 @@
-import { makeAutoObservable, observable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { makePersistable } from "mobx-persist-store";
 
 import { IThemeButtonService } from "./IThemeButtonService";
@@ -87,12 +87,12 @@ export class ThemeButtonService implements IThemeButtonService {
       color: EButtonColor.red,
     }),
   ];
-  
+
   defaultTheme = 1;
 
   getThemeButtonById(id: number | string): ThemeButton {
     const themeButton = ThemeButtonService.themes.find(
-      (button) => button.id === id
+      (button) => button.id === id,
     );
 
     if (!themeButton) {

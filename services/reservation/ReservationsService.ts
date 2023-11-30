@@ -1,16 +1,23 @@
 import makeAutoObservable from "mobx-store-inheritance";
 import { TypePromiseApiResponse } from "../response/TypesApiResponseHandler";
 import { BaseService } from "../base/BaseService";
+import { ParamsBaseApi } from "../base/TypesBaseService";
+import {
+  ParamsGetPlayers,
+  ParamsCreateReservation,
+  ParamsCancelReservation,
+} from "./TypeReservationsService";
 import { IReservationsService } from "./IReservationsService";
 import { DataPlayer, DataPlayerPlayer } from "~/models/reservation/DataPlayer";
 import { Reservation } from "~/models/reservation/Reservation";
 import { Player } from "~/models/reservation/Player";
-import { ParamsGetPlayers, ParamsCreateReservation, ParamsCancelReservation } from "./TypeReservationsService";
-import { ParamsBaseApi } from "../base/TypesBaseService";
 import { DataReservation } from "~/models/reservation/DataReservation";
 import { EReservationStatus } from "~/models/reservation/EReservation";
 
-export class ReservationsService extends BaseService implements IReservationsService {
+export class ReservationsService
+  extends BaseService
+  implements IReservationsService
+{
   /**
    * Class that holds all information regarding the Reservations of the application.
    *
@@ -34,7 +41,6 @@ export class ReservationsService extends BaseService implements IReservationsSer
 
   sportsTypes: string[] = ["Padel", "Tennis"];
 
-
   constructor() {
     super();
     makeAutoObservable(this, {}, { autoBind: true });
@@ -45,7 +51,9 @@ export class ReservationsService extends BaseService implements IReservationsSer
   }
 
   setReservations(data: DataReservation[]) {
-    this.reservations = data.map((reservationData) => new Reservation(reservationData));
+    this.reservations = data.map(
+      (reservationData) => new Reservation(reservationData),
+    );
   }
 
   getReservation(id: number | string): Reservation {
@@ -62,7 +70,10 @@ export class ReservationsService extends BaseService implements IReservationsSer
     return await fetch.request({
       url: this.parseUrl({
         url: ReservationsService.PLAYERS_URL,
-        queryParams: { search_term: params.searchTerm, member_account_id: params.membershipId },
+        queryParams: {
+          search_term: params.searchTerm,
+          member_account_id: params.membershipId,
+        },
       }),
       method: "GET",
       locale: params.locale,
@@ -85,7 +96,9 @@ export class ReservationsService extends BaseService implements IReservationsSer
     });
   }
 
-  async createReservation(params: ParamsCreateReservation): TypePromiseApiResponse {
+  async createReservation(
+    params: ParamsCreateReservation,
+  ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({
@@ -94,11 +107,13 @@ export class ReservationsService extends BaseService implements IReservationsSer
       locale: params.locale,
       accessToken: true,
       refreshToken: true,
-      body: params.body
-    })
+      body: params.body,
+    });
   }
 
-  async cancelReservation(params: ParamsCancelReservation): TypePromiseApiResponse {
+  async cancelReservation(
+    params: ParamsCancelReservation,
+  ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
     return await fetch.request({
@@ -114,10 +129,12 @@ export class ReservationsService extends BaseService implements IReservationsSer
   }
 
   _handleSuccessfullGetPlayers(response: DataPlayerPlayer): DataPlayer[] {
-    return response.club_members.map(member => ({
+    return response.club_members.map((member) => ({
       id: member.club_member.names[0].name.id,
       fullName: member.club_member.names[0].name.display_name,
-      image: member.club_member.assets[0]?.avatar.url || 'https://images.unsplash.com/photo-1583275478661-1c31970669fa?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+      image:
+        member.club_member.assets[0]?.avatar.url ||
+        "https://images.unsplash.com/photo-1583275478661-1c31970669fa?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     }));
   }
 

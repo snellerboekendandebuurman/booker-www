@@ -1,4 +1,4 @@
-import { action, observable, computed, makeAutoObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { IModalMessageService } from "./IModalMessageService";
 import { ModalMessage } from "~/models/response/ModalMessage";
 import { DataModalMessage } from "~/models/response/DataModalMessage";
@@ -45,7 +45,7 @@ export class ModalMessageService implements IModalMessageService {
   // @action.bound
   removeModal(modalMessageId: number | string) {
     this.modalMessagesQueue = this.modalMessagesQueue.filter(
-      (modalMessage) => modalMessage.id !== modalMessageId
+      (modalMessage) => modalMessage.id !== modalMessageId,
     );
   }
 }
