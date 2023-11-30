@@ -52,7 +52,8 @@ runs:
       - name: try things 2.0
         shell: bash
         run: |
-          cd booker-www
+          echo $PWD
+          cd services/reservation/
           ls -la
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3
