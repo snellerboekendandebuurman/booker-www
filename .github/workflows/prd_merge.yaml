@@ -31,8 +31,8 @@ jobs:
   #         aws_secret_access_key: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
   #         aws_region: eu-west-3
   #         node_version: 19
-  #         s3_bucket: ${{ secrets.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET }}
-  #         cloudfront_distribution_id: ${{ secrets.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
+  #         s3_bucket: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_STATIC_HOSTING_BUCKET }}
+  #         cloudfront_distribution_id: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
   #         api_url: ${{ vars.API_URL }}
   #         web_url: ${{ vars.WEB_URL }}
   terraform:
