@@ -3,11 +3,11 @@
     class="col-span-1 flex flex-col divide-y divide-gray-200 hover:divide-gray-400 rounded-lg text-center shadow bg-slate-400 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-500 hover:cursor-pointer"
     @click="toggleModal"
   >
-    <ReservationInfoModal
+    <!-- <ReservationInfoModal
       :modal-open="showModal"
       :reservation="reservation"
       @toggle-modal="toggleModal"
-    />
+    /> -->
     <div class="flex flex-col p-6">
       <img
         class="mx-auto h-16 w-auto flex-shrink-0 rounded-md"
@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import ReservationInfoModal from "./ReservationInfoModal.vue";
+// import ReservationInfoModal from "./ReservationInfoModal.vue";
 import { Reservation } from "~/models/reservation/Reservation";
 import { EReservationStatus } from "~/models/reservation/EReservation";
 
