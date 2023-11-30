@@ -23,6 +23,18 @@ logs
 .env.*
 !.env.example
 
+### Terraform ###
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
 override.tf
@@ -41,3 +53,6 @@ override.tf.json
 terraform.rc
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform
+.tf/composition/www/eu-west-3/prd/.terraform/terraform.tfstate
+.tf/composition/www/eu-west-3/prd/.terraform/modules/modules.json
+.tf/composition/www/eu-west-3/prd/.terraform/providers/registry.terraform.io/hashicorp/aws/4.67.0/darwin_amd64/terraform-provider-aws_v4.67.0_x5
