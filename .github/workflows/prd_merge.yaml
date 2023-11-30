@@ -37,7 +37,7 @@ jobs:
   #         web_url: ${{ vars.WEB_URL }}
   terraform:
     runs-on: ubuntu-latest
-    needs: [deploy]
+    # needs: [deploy]
     environment: prd
     steps:
       - name: Get code
