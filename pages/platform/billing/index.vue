@@ -9,13 +9,13 @@
           <BaseButton
             :button-theme="themeButtonService.getThemeButtonById(8)"
             @click="createStripeSetupIntent"
-            >
+          >
             <BaseSpinnerSmall
-                :submit-in-progress="submitInProgress"
-                spinner-text="platform.billing.setting_up_payment_intent"
-                button-text="platform.billing.setup_payment_intent"
-              />
-            </BaseButton>
+              :submit-in-progress="submitInProgress"
+              spinner-text="platform.billing.setting_up_payment_intent"
+              button-text="platform.billing.setup_payment_intent"
+            />
+          </BaseButton>
         </PricingInfo>
       </Observer>
     </div>
@@ -23,9 +23,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref } from "vue";
 import ButtonLogout from "./components/ButtonLogout.vue";
-import PricingInfo from "~/components/pricing/PricingInfo.vue"
+import PricingInfo from "~/components/pricing/PricingInfo.vue";
 
 import { billingService } from "~/services/billing/BillingService";
 import { apiResponseHandlerService } from "~/services/response/ApiResponseHandlerService";
@@ -39,7 +39,7 @@ const { localeProperties } = useI18n();
 const submitInProgress = ref(false);
 
 async function createStripeSetupIntent() {
-    submitInProgress.value = true;
+  submitInProgress.value = true;
 
   const response = await billingService.getStripeSetupIntent({
     locale: localeProperties.value.iso!,
@@ -56,7 +56,7 @@ async function createStripeSetupIntent() {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     if (
       response.error.value!.status === 401 ||

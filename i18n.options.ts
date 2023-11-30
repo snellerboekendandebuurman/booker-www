@@ -1,4 +1,3 @@
 export default defineI18nConfig(() => ({
-    locale: 'en',
-  }));
-  
+  locale: "en",
+}));

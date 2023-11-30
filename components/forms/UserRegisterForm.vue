@@ -53,16 +53,16 @@ const schema = object().shape({
     .required(() => t("global.messages.field_email_required"))
     .email(() => t("global.messages.field_email_invalid")),
   first_name: string().required(() =>
-    t("global.messages.field_first_name_required")
+    t("global.messages.field_first_name_required"),
   ),
   last_name: string().required(() =>
-    t("global.messages.field_last_name_required")
+    t("global.messages.field_last_name_required"),
   ),
   password: string()
     .required(() => t("global.messages.field_password_required"))
     .min(10, () => t("global.messages.field_password_too_short")),
   terms_of_service: boolean().required(() =>
-    t("global.messages.field_terms_of_service")
+    t("global.messages.field_terms_of_service"),
   ),
 });
 
@@ -94,7 +94,7 @@ const onSubmit = handleSubmit(async (values) => {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     return;
   }
@@ -118,7 +118,7 @@ const onSubmit = handleSubmit(async (values) => {
           label: "Home",
         },
       ],
-    })
+    }),
   );
   resetForm();
 });

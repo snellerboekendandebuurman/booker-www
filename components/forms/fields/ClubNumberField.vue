@@ -1,8 +1,10 @@
 <template>
   <div>
-    <label for="club_number" class="block text-sm font-medium leading-6 text-slate-700 dark:text-slate-300">{{
-      $t("global.fields.club_number")
-    }}</label>
+    <label
+      for="club_number"
+      class="block text-sm font-medium leading-6 text-slate-700 dark:text-slate-300"
+      >{{ $t("global.fields.club_number") }}</label
+    >
     <div class="mt-1">
       <Field
         name="club_number"

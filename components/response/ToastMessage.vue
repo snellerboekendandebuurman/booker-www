@@ -71,7 +71,7 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
 import { toastMessageService } from "~/services/response/ToastMessageService";
 
 function removeToast(event, messageId) {
-  toastMessageService.removeToast(messageId)
+  toastMessageService.removeToast(messageId);
   event.stopPropagation();
 }
 </script>

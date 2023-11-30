@@ -1,5 +1,5 @@
 export enum EStepStatus {
-    empty,
-    current,
-    complete,
-  }
+  empty,
+  current,
+  complete,
+}

@@ -1,8 +1,8 @@
 <template>
   <div>
     <Portal class="z-50">
-      <ModalMessage/>
-      <ToastMessage/>
+      <ModalMessage />
+      <ToastMessage />
     </Portal>
     <div class="sticky top-0 z-10">
       <TheSidebar :sidebar-open="sidebarOpen" @toggle-sidebar="toggleSidebar" />
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import { Portal } from "@headlessui/vue";
 import TheSidebar from "@/components/platform/sidebar/TheSidebar.vue";
 import TheTopbar from "@/components/platform/topbar/TheTopbar.vue";
 // This import is here to make sure the proper theme is set
@@ -22,8 +23,6 @@ import TheTopbar from "@/components/platform/topbar/TheTopbar.vue";
 import { themeColorService } from "~/services/theme/ThemeColorService";
 import ToastMessage from "~/components/response/ToastMessage.vue";
 import ModalMessage from "~/components/response/ModalMessage.vue";
-
-import { Portal } from '@headlessui/vue'
 
 themeColorService.getTheme();
 

@@ -3,22 +3,42 @@
     <slot />
 
     <div class="mt-8 md:mt-12 flex justify-between">
-  <BaseButton v-if="hasPrevious" type="button" @click="goToPrev" :button-theme="themeButtonService.getThemeButtonById(5)">
-    {{ $t("global.previous") }}
-  </BaseButton>
-  <BaseButton v-else-if="!hasPrevious" type="button" @click="goCloseStep" :button-theme="themeButtonService.getThemeButtonById(5)">
-    {{ $t("global.close") }}
-  </BaseButton>
-  <div v-if="!hasPrevious" class="flex-grow"></div>
-    <BaseButton v-if="!isLastStep" type="button" @click="onSubmit" :button-theme="themeButtonService.getThemeButtonById(8)">{{ $t("global.next") }}</BaseButton>
-    <BaseButton v-else :button-theme="themeButtonService.getThemeButtonById(8)">{{ $t("global.save") }}</BaseButton>
-  </div>
+      <BaseButton
+        v-if="hasPrevious"
+        type="button"
+        :button-theme="themeButtonService.getThemeButtonById(5)"
+        @click="goToPrev"
+      >
+        {{ $t("global.previous") }}
+      </BaseButton>
+      <BaseButton
+        v-else-if="!hasPrevious"
+        type="button"
+        :button-theme="themeButtonService.getThemeButtonById(5)"
+        @click="goCloseStep"
+      >
+        {{ $t("global.close") }}
+      </BaseButton>
+      <div v-if="!hasPrevious" class="flex-grow"></div>
+      <BaseButton
+        v-if="!isLastStep"
+        type="button"
+        :button-theme="themeButtonService.getThemeButtonById(8)"
+        @click="onSubmit"
+        >{{ $t("global.next") }}</BaseButton
+      >
+      <BaseButton
+        v-else
+        :button-theme="themeButtonService.getThemeButtonById(8)"
+        >{{ $t("global.save") }}</BaseButton
+      >
+    </div>
   </form>
 </template>
 
 <script setup lang="ts">
-import { useForm } from 'vee-validate';
-import { ref, computed, provide } from 'vue';
+import { useForm } from "vee-validate";
+import { ref, computed, provide } from "vue";
 
 import { themeButtonService } from "~/services/theme/ThemeButtonService";
 
@@ -31,16 +51,16 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['submit', 'nextStep', 'previousStep', 'closeStep']);
+const emit = defineEmits(["submit", "nextStep", "previousStep", "closeStep"]);
 const currentStepIdx = ref(0);
 
 // Injects the starting step, child <form-steps> will use this to generate their ids
 const stepCounter = ref(0);
-provide('STEP_COUNTER', stepCounter);
+provide("STEP_COUNTER", stepCounter);
 
 // Inject the live ref of the current index to child components
 // will be used to toggle each form-step visibility
-provide('CURRENT_STEP_INDEX', currentStepIdx);
+provide("CURRENT_STEP_INDEX", currentStepIdx);
 
 // if this is the last step
 const isLastStep = computed(() => {
@@ -67,12 +87,12 @@ const { handleSubmit } = useForm({
 const onSubmit = handleSubmit((values) => {
   if (!isLastStep.value) {
     currentStepIdx.value++;
-    emit('nextStep', currentStepIdx.value);
+    emit("nextStep", currentStepIdx.value);
     return;
   }
 
   // Let the parent know the form was filled across all steps
-  emit('submit', values);
+  emit("submit", values);
 });
 
 function goToPrev() {
@@ -81,11 +101,10 @@ function goToPrev() {
   }
 
   currentStepIdx.value--;
-  emit('previousStep', currentStepIdx.value);
+  emit("previousStep", currentStepIdx.value);
 }
 
 function goCloseStep() {
-  emit('closeStep')
+  emit("closeStep");
 }
 </script>
-

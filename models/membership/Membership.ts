@@ -1,6 +1,6 @@
 import makeAutoObservable from "mobx-store-inheritance";
 import { BaseModel } from "../base/BaseModel";
-import { AuthenticationMethod } from "./AuthenticationMethod"
+import { AuthenticationMethod } from "./AuthenticationMethod";
 import { DataMembership } from "./DataMembership";
 import { IMembership } from "./IMembership";
 import { Club } from "./Club";
@@ -19,7 +19,7 @@ export class Membership
    * A Membership basically holds information regarding; id, club, authentication methods, client and club number or association number.
    * The Membership extends the BaseModel model and implements an interface called IMembership.
    *
-   * @param Membership - That contains the following: id, club, club number, association number, authentication method & client. 
+   * @param Membership - That contains the following: id, club, club number, association number, authentication method & client.
    * @returns The implemented model of a Membership which can be used throughout the codebase.
    *
    */
@@ -36,7 +36,9 @@ export class Membership
     this.clubNumber = mappedData.clubNumber || "";
     this.associationNumber = mappedData.associationNumber || "";
     this.club = new Club(mappedData.club!);
-    this.authenticationMethod = new AuthenticationMethod(mappedData.authenticationMethod!);
+    this.authenticationMethod = new AuthenticationMethod(
+      mappedData.authenticationMethod!,
+    );
     this.client = new Client(mappedData.client!);
   }
 }

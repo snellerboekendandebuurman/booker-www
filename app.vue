@@ -20,8 +20,7 @@ useJsonld({
   // Organization: https://schema.org/Organization
   "@type": "Organization",
   brand: "snellerboekendandebuurman.nl",
-  description:
-    "Sneller boeken dan de buurman.",
+  description: "Sneller boeken dan de buurman.",
   email: "info@snellerboekendandebuurman.nl",
   employee: "Joris Jansen",
   founder: "Joris Jansen",

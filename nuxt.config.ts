@@ -28,7 +28,11 @@ export default defineNuxtConfig({
         // open graph
         // https://masteringnuxt.com/blog/setting-up-nuxt-for-social-cards-and-meta-tags-to-improve-seo
         { hid: "og:type", property: "og:type", content: "website" },
-        { hid: "og:title", property: "og:title", content: "snellerboekendandebuurman" },
+        {
+          hid: "og:title",
+          property: "og:title",
+          content: "snellerboekendandebuurman",
+        },
         { hid: "og:url", property: "og:url", content: process.env.BASE_URL },
         {
           hid: "og:description",
@@ -42,7 +46,11 @@ export default defineNuxtConfig({
         },
 
         // twitter card
-        { hid: "twitter:title", name: "twitter:title", content: "snellerboekendandebuurman" },
+        {
+          hid: "twitter:title",
+          name: "twitter:title",
+          content: "snellerboekendandebuurman",
+        },
         {
           hid: "twitter:url",
           name: "twitter:url",
@@ -152,7 +160,7 @@ export default defineNuxtConfig({
     UserAgent: "*",
     Disallow: "",
   },
-  buildModules: ['mobx-vue-lite/nuxt'],
+  buildModules: ["mobx-vue-lite/nuxt"],
   css: ["~/assets/css/main.css"],
   postcss: {
     plugins: {

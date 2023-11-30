@@ -1,33 +1,48 @@
 <template>
-    <div class="bg-slate-400 dark:bg-slate-700 rounded-lg">
-      <DeleteMembershipConfirmation v-if="showModal" :submit-in-progress="submitInProgress" @close-modal="closeModal" @delete-membership="deleteMembership(membership.id)"/>
-      <div class="flex flex-col p-8">
-            <img class="mx-auto h-28 w-auto flex-shrink-0 rounded-md" :src="membership.club.image" alt="No Image" />
-            <h3 class="mt-6">{{ membership.associationNumber || membership.clubNumber }}</h3>
-            <dl class="mt-6 flex flex-grow flex-col justify-between">
-              <dd class="">{{ membership.authenticationMethod.method }}</dd>
-            </dl>
-          </div>
-          <div>
-          </div>
-          <div>
-        <div class="flex border-2 border-slate-500 rounded-lg hover:border-slate-300 hover:cursor-pointer bg-slate-200 dark:bg-slate-600">
-          <div class="flex w-0 flex-1">
-            <a @click="showModal = true" class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-md font-semibold text-red-600 dark:text-red-400">
-              <TrashIcon class="h-6 w-6" aria-hidden="true" />
-              Delete
-            </a>
-          </div>
+  <div class="bg-slate-400 dark:bg-slate-700 rounded-lg">
+    <DeleteMembershipConfirmation
+      v-if="showModal"
+      :submit-in-progress="submitInProgress"
+      @close-modal="closeModal"
+      @delete-membership="deleteMembership(membership.id)"
+    />
+    <div class="flex flex-col p-8">
+      <img
+        class="mx-auto h-28 w-auto flex-shrink-0 rounded-md"
+        :src="membership.club.image"
+        alt="No Image"
+      />
+      <h3 class="mt-6">
+        {{ membership.associationNumber || membership.clubNumber }}
+      </h3>
+      <dl class="mt-6 flex flex-grow flex-col justify-between">
+        <dd class="">{{ membership.authenticationMethod.method }}</dd>
+      </dl>
+    </div>
+    <div></div>
+    <div>
+      <div
+        class="flex border-2 border-slate-500 rounded-lg hover:border-slate-300 hover:cursor-pointer bg-slate-200 dark:bg-slate-600"
+      >
+        <div class="flex w-0 flex-1">
+          <a
+            class="relative -mr-px inline-flex w-0 flex-1 items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-md font-semibold text-red-600 dark:text-red-400"
+            @click="showModal = true"
+          >
+            <TrashIcon class="h-6 w-6" aria-hidden="true" />
+            {{ $t("global.delete") }}
+          </a>
         </div>
       </div>
     </div>
+  </div>
 </template>
-    
+
 <script setup lang="ts">
-import { TrashIcon } from '@heroicons/vue/20/solid'
-import { Membership } from '~/models/membership/Membership';
-import { membershipsService } from "~/services/membership/MembershipsService";
+import { TrashIcon } from "@heroicons/vue/20/solid";
 import DeleteMembershipConfirmation from "./locals/DeleteMembershipConfirmation.vue";
+import { Membership } from "~/models/membership/Membership";
+import { membershipsService } from "~/services/membership/MembershipsService";
 import { apiResponseHandlerService } from "~/services/response/ApiResponseHandlerService";
 import { toastMessageService } from "~/services/response/ToastMessageService";
 import { ToastMessage } from "~/models/response/ToastMessage";
@@ -50,8 +65,8 @@ async function deleteMembership(membershipId: number | string) {
   const response = await membershipsService.deleteMembership({
     locale: localeProperties.value.iso!,
     membershipId,
-  })
-  
+  });
+
   submitInProgress.value = false;
   const message = apiResponseHandlerService.handleResponse(response);
 
@@ -61,7 +76,7 @@ async function deleteMembership(membershipId: number | string) {
       title: message.title,
       message: message.message,
       status: message.status,
-    })
+    }),
   );
 
   // Catch error
@@ -71,7 +86,7 @@ async function deleteMembership(membershipId: number | string) {
 
   membershipsService._handleSuccesfullMembershipDeletion(membershipId);
   showModal.value = false;
-};
+}
 
 function closeModal() {
   showModal.value = false;

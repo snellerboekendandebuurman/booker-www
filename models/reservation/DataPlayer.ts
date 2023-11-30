@@ -1,18 +1,18 @@
 export interface DataPlayerPlayer {
   club_members: Array<{
-      club_member: {
-          names: Array<{
-            name: {
-              id: string;
-              display_name: string;
-            }
-          }>;
-          assets: Array<{
-              avatar: {
-                  url: string;
-              };
-          }>;
-      };
+    club_member: {
+      names: Array<{
+        name: {
+          id: string;
+          display_name: string;
+        };
+      }>;
+      assets: Array<{
+        avatar: {
+          url: string;
+        };
+      }>;
+    };
   }>;
 }
 

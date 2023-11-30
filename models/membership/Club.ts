@@ -28,6 +28,9 @@ export class Club
     makeAutoObservable(this);
     const mappedData = this.mapResponseKeys(data);
     this.name = mappedData.name || "";
-    this.image = mappedData.logoUrl || mappedData.image || "https://images.unsplash.com/photo-1573294184805-e3044b161ace";
+    this.image =
+      mappedData.logoUrl ||
+      mappedData.image ||
+      "https://images.unsplash.com/photo-1573294184805-e3044b161ace";
   }
 }

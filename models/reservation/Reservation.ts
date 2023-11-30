@@ -1,10 +1,10 @@
 import makeAutoObservable from "mobx-store-inheritance";
 import { BaseModel } from "../base/BaseModel";
-import { Player } from "./Player"
+import { Membership } from "../membership/Membership";
+import { Player } from "./Player";
 import { DataReservation } from "./DataReservation";
 import { IReservation } from "./IReservation";
 import { EReservationSportsType, EReservationStatus } from "./EReservation";
-import { Membership } from "../membership/Membership";
 
 export class Reservation
   // eslint-disable-next-line no-use-before-define
@@ -31,7 +31,6 @@ export class Reservation
   membership: Membership;
   players: Player[];
 
-
   constructor(data: DataReservation) {
     super(data);
     makeAutoObservable(this);
@@ -43,47 +42,71 @@ export class Reservation
     this.status = this.getStatus(mappedData.status!);
     this.membership = new Membership(mappedData.memberAccount!);
     this.players =
-        mappedData.players?.map((player) => new Player(player)) || [];
+      mappedData.players?.map((player) => new Player(player)) || [];
+  }
+
+  getImage(): string {
+    if (this.sportType === EReservationSportsType.Padel) {
+      return "https://images.unsplash.com/photo-1612534847738-b3af9bc31f0c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     }
 
-    getImage(): string {
-      if (this.sportType === EReservationSportsType.Padel) {
-        return "https://images.unsplash.com/photo-1612534847738-b3af9bc31f0c?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      }
+    return "https://plus.unsplash.com/premium_photo-1663011107235-7cdc458bce48?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  }
 
-      return "https://plus.unsplash.com/premium_photo-1663011107235-7cdc458bce48?q=80&w=3270&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+  getSportsType(sportsType: string): EReservationSportsType {
+    return (this.sportType =
+      EReservationSportsType[
+        sportsType as keyof typeof EReservationSportsType
+      ]);
+  }
 
-    getSportsType(sportsType: string): EReservationSportsType {
-        return this.sportType = EReservationSportsType[sportsType as keyof typeof EReservationSportsType];
-    }
+  getStatus(status: string): EReservationStatus {
+    return EReservationStatus[status as keyof typeof EReservationStatus];
+  }
 
-    getStatus(status: string): EReservationStatus {
-      return EReservationStatus[status as keyof typeof EReservationStatus];
-    }
+  getFormattedScheduleTime() {
+    return this.formatDate(this.scheduledTime);
+  }
 
-    getFormattedScheduleTime() {
-      return this.formatDate(this.scheduledTime)
-    }
+  getFormattedReservationTime() {
+    return this.formatDate(this.reservationTime);
+  }
 
-    getFormattedReservationTime() {
-      return this.formatDate(this.reservationTime)
-    }
+  formatDate(dateString: string) {
+    const date = new Date(dateString);
 
-    formatDate(dateString: string) {
-      const date = new Date(dateString);
-  
-      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-  
-      const dayOfWeek = days[date.getDay()];
-      const dayOfMonth = date.getDate();
-      const month = months[date.getMonth()];
-      const year = date.getFullYear();
-  
-      const hours = date.getHours().toString().padStart(2, '0');
-      const minutes = date.getMinutes().toString().padStart(2, '0');
-  
-      return `${dayOfWeek} - ${dayOfMonth} ${month} ${year} @ ${hours}:${minutes}`;
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+
+    const dayOfWeek = days[date.getDay()];
+    const dayOfMonth = date.getDate();
+    const month = months[date.getMonth()];
+    const year = date.getFullYear();
+
+    const hours = date.getHours().toString().padStart(2, "0");
+    const minutes = date.getMinutes().toString().padStart(2, "0");
+
+    return `${dayOfWeek} - ${dayOfMonth} ${month} ${year} @ ${hours}:${minutes}`;
   }
 }

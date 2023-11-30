@@ -154,7 +154,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userVerifyEmail(
-    params: ParamsUserVerifyEmailApi
+    params: ParamsUserVerifyEmailApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -210,7 +210,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userRequestPasswordReset(
-    params: ParamsRequestPasswordResetApi
+    params: ParamsRequestPasswordResetApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -225,7 +225,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userVerifyPasswordReset(
-    params: ParamsVerifyPasswordResetApi
+    params: ParamsVerifyPasswordResetApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -240,7 +240,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userRequestEmailReset(
-    params: ParamsRequestEmailResetApi
+    params: ParamsRequestEmailResetApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -254,7 +254,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userVerifyEmailReset(
-    params: ParamsVerifyEmailResetApi
+    params: ParamsVerifyEmailResetApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -269,7 +269,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async userRequestEmailVerify(
-    params: ParamsRequestEmailVerifyApi
+    params: ParamsRequestEmailVerifyApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -295,7 +295,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async patchAuthenticatedUser(
-    params: ParamsPatchAuthenticatedUserApi
+    params: ParamsPatchAuthenticatedUserApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -310,7 +310,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async deleteAuthenticatedUser(
-    params: ParamsDeleteAuthenticatedUserApi
+    params: ParamsDeleteAuthenticatedUserApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -324,7 +324,7 @@ class UserService extends BaseService implements IUserService {
   }
 
   async patchAuthenticatedUserSettings(
-    params: ParamsPatchAuthenticatedUserSettingsApi
+    params: ParamsPatchAuthenticatedUserSettingsApi,
   ): TypePromiseApiResponse {
     const fetch = useCustomFetch();
 
@@ -340,7 +340,7 @@ class UserService extends BaseService implements IUserService {
 
   _handleSuccessfullLogin(
     apiResponse: ApiResponseSuccessfullLogin,
-    message: DataHandleResponse
+    message: DataHandleResponse,
   ) {
     toastMessageService.addToast(
       new ToastMessage({
@@ -348,7 +348,7 @@ class UserService extends BaseService implements IUserService {
         title: message.title,
         message: message.message,
         status: message.status,
-      })
+      }),
     );
     this.setLoggedInUserTokens(apiResponse.token);
     this.setLoggedInUserAccountStatus(apiResponse.account_status);
@@ -359,7 +359,7 @@ class UserService extends BaseService implements IUserService {
   _handleSuccessfullRefreshTokenLogin(
     apiResponse: ApiResponseSuccessfullRefreshTokenLogin,
     redirect: boolean,
-    message?: DataHandleResponse
+    message?: DataHandleResponse,
   ) {
     if (message) {
       toastMessageService.addToast(
@@ -368,7 +368,7 @@ class UserService extends BaseService implements IUserService {
           title: message.title,
           message: message.message,
           status: message.status,
-        })
+        }),
       );
     }
     this.setLoggedInUserAccessToken(apiResponse.access_token);
@@ -403,7 +403,7 @@ class UserService extends BaseService implements IUserService {
     this.clearStoredData();
 
     const [buttons, message] = this._errorResponseMessages(
-      responseMessage.message
+      responseMessage.message,
     );
     const modalMessage = new ModalMessage({
       id: Math.random(),

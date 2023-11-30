@@ -1,6 +1,9 @@
 <template>
   <div>
-    <label for="password" class="block text-sm font-medium leading-6 text-slate-700 dark:text-slate-300">
+    <label
+      for="password"
+      class="block text-sm font-medium leading-6 text-slate-700 dark:text-slate-300"
+    >
       <div class="flex items-center">
         {{ $t("global.fields.password") }}
         <span class="ml-2 flex">

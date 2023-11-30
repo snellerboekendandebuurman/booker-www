@@ -54,12 +54,9 @@ const useCustomFetch = () => {
           response._data.status = response.status;
         },
       });
-      const statusCode = response.error.value?.status || response.error.value?.statusCode;
-      if (
-        statusCode === 401 &&
-        retryCount < maxRetries &&
-        refreshToken
-      ) {
+      const statusCode =
+        response.error.value?.status || response.error.value?.statusCode;
+      if (statusCode === 401 && retryCount < maxRetries && refreshToken) {
         retryCount++;
         const refreshUserTokenResponse =
           await userService.userLoginRefreshToken();
@@ -69,7 +66,7 @@ const useCustomFetch = () => {
         if (refreshUserTokenResponse.data.value) {
           userService._handleSuccessfullRefreshTokenLogin(
             refreshUserTokenResponse.data.value,
-            false
+            false,
           );
         }
         accessToken = true;

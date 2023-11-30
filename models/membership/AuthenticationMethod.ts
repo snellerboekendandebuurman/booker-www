@@ -3,7 +3,6 @@ import { BaseModel } from "../base/BaseModel";
 import { DataAuthenticationMethod } from "./DataAuthenticationMethod";
 import { IAuthenticationMethod } from "./IAuthenticationMethod";
 
-
 export class AuthenticationMethod
   // eslint-disable-next-line no-use-before-define
   extends BaseModel<AuthenticationMethod>
@@ -28,5 +27,5 @@ export class AuthenticationMethod
     makeAutoObservable(this);
     const mappedData = this.mapResponseKeys(data);
     this.method = mappedData.method || "";
-    }
+  }
 }

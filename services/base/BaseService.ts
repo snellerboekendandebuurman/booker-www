@@ -18,8 +18,8 @@ export class BaseService implements IBaseService {
         (key) =>
           (processedUrl = processedUrl.replace(
             `{${key}}`,
-            urlParams[key].toString()
-          ))
+            urlParams[key].toString(),
+          )),
       );
     }
     if (queryParams) {

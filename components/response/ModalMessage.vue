@@ -7,7 +7,7 @@
           class="relative z-50"
           @click="
             modalMessageService.removeModal(
-              modalMessageService.displayModalMessage.id
+              modalMessageService.displayModalMessage.id,
             )
           "
         >
@@ -105,7 +105,7 @@
                         :to="localePath(button.to)"
                         @click="
                           modalMessageService.removeModal(
-                            modalMessageService.displayModalMessage.id
+                            modalMessageService.displayModalMessage.id,
                           )
                         "
                       >
@@ -113,7 +113,7 @@
                           :key="button.id"
                           :button-theme="
                             themeButtonService.getThemeButtonById(
-                              button.themeId
+                              button.themeId,
                             )
                           "
                         >
@@ -128,7 +128,7 @@
                         "
                         @click="
                           modalMessageService.removeModal(
-                            modalMessageService.displayModalMessage.id
+                            modalMessageService.displayModalMessage.id,
                           )
                         "
                       >

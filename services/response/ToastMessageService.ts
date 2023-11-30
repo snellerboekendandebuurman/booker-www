@@ -38,9 +38,12 @@ export class ToastMessageService implements IToastMessageService {
           this.toastMessagesQueue.length -
             ToastMessageService.NUMBER_OF_CONSECUTIVE_TOASTS
         ];
-      setTimeout(() => {
-        this.removeToast(toastMessage.id);
-      }, lastToastMessage.timeout + toastMessage.timeout + 1000);
+      setTimeout(
+        () => {
+          this.removeToast(toastMessage.id);
+        },
+        lastToastMessage.timeout + toastMessage.timeout + 1000,
+      );
     } else {
       setTimeout(() => {
         this.removeToast(toastMessage.id);
@@ -51,7 +54,7 @@ export class ToastMessageService implements IToastMessageService {
   // @action.bound
   removeToast(toastMessageId: number | string) {
     this.toastMessagesQueue = this.toastMessagesQueue.filter(
-      (toastMessage) => toastMessage.id !== toastMessageId
+      (toastMessage) => toastMessage.id !== toastMessageId,
     );
   }
 }

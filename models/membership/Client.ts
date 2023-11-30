@@ -1,6 +1,6 @@
 import makeAutoObservable from "mobx-store-inheritance";
 import { BaseModel } from "../base/BaseModel";
-import { AuthenticationMethod } from "./AuthenticationMethod"
+import { AuthenticationMethod } from "./AuthenticationMethod";
 import { DataClient } from "./DataClient";
 import { IClient } from "./IClient";
 
@@ -17,7 +17,7 @@ export class Client
    * A Client basically holds information regarding; the name, image & Authentication Methods.
    * The Client extends the BaseModel model and implements an interface called IClient.
    *
-   * @param DataClient - That contains the following: id, name, image and a list of Authentication Methods 
+   * @param DataClient - That contains the following: id, name, image and a list of Authentication Methods
    * @returns The implemented model of a Client.
    *
    */
@@ -32,6 +32,9 @@ export class Client
     this.name = mappedData.name || "";
     this.image = mappedData.image || "";
     this.authenticationMethods =
-      mappedData.authenticationMethods?.map((authenticationMethodData) => new AuthenticationMethod(authenticationMethodData)) || [];
+      mappedData.authenticationMethods?.map(
+        (authenticationMethodData) =>
+          new AuthenticationMethod(authenticationMethodData),
+      ) || [];
   }
 }
