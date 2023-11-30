@@ -1,0 +1,34 @@
+name: Pull-Request Develop
+on:
+  pull_request:
+    # Workflow that only runs on PRs towards PRD
+    branches:
+      - prd
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Format, Lint & Sort code
+        uses: ./.github/actions/code_actions
+        with:
+          node_version: 19
+  # terraform:
+  #   runs-on: ubuntu-latest
+  #   needs: [code]
+  #   environment: prd
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ github.head_ref }}
+  #     - name: Format, Validate, Plan & Apply Terraform
+  #       uses: ./.github/actions/terraform_actions
+  #       with:
+  #         aws_access_key_id: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_ACCESS_KEY_ID }}
+  #         aws_secret_access_key: ${{ secrets.SNELLERBOEKENDANDEBUURMAN_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+  #         aws_region: eu-west-3
+  #         environment: prd
