@@ -46,6 +46,14 @@ runs:
       - name: Install dependencies
         shell: bash
         run: npm ci
+      - name: try things 1.0
+        shell: bash
+        run: ls -la
+      - name: try things 2.0
+        shell: bash
+        run: |
+          cd booker-www
+          ls -la
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
