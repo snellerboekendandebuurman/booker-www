@@ -108,8 +108,6 @@ export default defineNuxtConfig({
     "@nuxtjs/robots",
     // https://vee-validate.logaretm.com/v4/
     "@vee-validate/nuxt",
-    // https://tailwindcss.nuxtjs.org/
-    // "@nuxtjs/tailwindcss",
   ],
   // config for i18n
   i18n: {
@@ -153,7 +151,7 @@ export default defineNuxtConfig({
   },
   // config for sitemap-module
   sitemap: {
-    hostname: "https://quanttrade.io",
+    hostname: "https://snellerboekendandebuurman.nl",
   },
   // config for robots-module
   robots: {

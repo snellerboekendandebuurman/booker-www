@@ -9,7 +9,7 @@
  * Base component for creating and styling a button.
  *
  * @remarks
- * This component is a so called "Base" component, which applies QuantTrade specific styling through the params.
+ * This component is a so called "Base" component, which applies snellerboekendandebuurman specific styling through the params.
  * The slot can be used for any type of content, for example; a simple <p> tag for some text or a <NuxtLink> for navigation.
  *
  * @param IThemeButton - The implemented version af a ThemeButton, because we use the .getTailwindClass method inside of the component.

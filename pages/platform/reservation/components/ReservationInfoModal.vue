@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <TransitionRoot as="template" :show="modalOpen">
     <Dialog as="div" class="relative z-10" @close="toggleModal">
       <TransitionChild
@@ -235,8 +235,4 @@ async function cancelReservation(reservationId: string | number) {
   reservationsService._handleSuccesfullReservationCancel(reservationId);
   showCancelConfirmationModal.value = false;
 }
-</script> -->
-
-<template>
-  <p>PPPP</p>
-</template>
+</script>
