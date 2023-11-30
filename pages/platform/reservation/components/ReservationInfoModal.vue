@@ -181,7 +181,7 @@ import { ToastMessage } from "~/models/response/ToastMessage";
 import { toastMessageService } from "~/services/response/ToastMessageService";
 import { Reservation } from "~/models/reservation/Reservation";
 import { EReservationStatus } from "~/models/reservation/EReservation";
-import { reservationsService } from "~/services/reservation/reservationsService";
+import { reservationsService } from "~/services/reservation/ReservationsService";
 
 const { localeProperties } = useI18n();
 

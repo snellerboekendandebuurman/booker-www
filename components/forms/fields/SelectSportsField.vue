@@ -75,7 +75,7 @@
 <script setup lang="ts">
 import { ref, defineEmits } from "vue";
 import { useField } from "vee-validate";
-import { reservationsService } from "~/services/reservation/reservationsService";
+import { reservationsService } from "~/services/reservation/ReservationsService";
 
 const emit = defineEmits(["sports-type-selected"]);
 
