@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   ],
   // config for i18n
   i18n: {
-    defaultLocale: "en",
+    defaultLocale: "nl",
     strategy: "prefix",
     baseUrl: process.env.WEB_URL,
     locales: [
@@ -144,7 +144,7 @@ export default defineNuxtConfig({
       // Set to always redirect to value stored in the cookie, not just once
       alwaysRedirect: true,
       // If no locale for the browsers locale is a match, use this one as a fallback
-      fallbackLocale: "en",
+      fallbackLocale: "nl",
     },
     // add `vueI18n` option to `@nuxtjs/i18n` module options
     vueI18n: "./i18n.options.ts",
