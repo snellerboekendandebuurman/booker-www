@@ -38,23 +38,14 @@ runs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.node_version}}
-      # - name: Cache dependencies
-      #   uses: actions/cache@v3
-      #   with:
-      #     path: ~/.npm
-      #     key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         shell: bash
         run: npm ci
-      - name: try things 1.0
-        shell: bash
-        run: ls -la
-      - name: try things 2.0
-        shell: bash
-        run: |
-          echo $PWD
-          cd services/reservation/
-          ls -la
       - name: Create .env file
         uses: SpicyPizza/create-envfile@v1.3
         with:
