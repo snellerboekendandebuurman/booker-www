@@ -1,0 +1,53 @@
+name: Merge to Production
+on:
+  push:
+    branches:
+      - prd
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Format, Lint & Sort code
+        uses: ./.github/actions/code_actions
+        with:
+          node_version: 19
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: [test]
+  #   environment: prd
+  #   steps:
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #       with:
+  #         ref: ${{ github.head_ref }}
+  #     - name: Build && Deploy
+  #       uses: ./.github/actions/deploy_actions
+  #       with:
+  #         aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+  #         aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+  #         aws_region: eu-west-3
+  #         node_version: 19
+  #         s3_bucket: ${{ secrets.QUANTTRADE_WWW_STATIC_HOSTING_BUCKET }}
+  #         cloudfront_distribution_id: ${{ secrets.QUANTTRADE_WWW_CLOUDFRONT_DISTRIBUTION_ID }}
+  #         api_url: ${{ vars.API_URL }}
+  #         web_url: ${{ vars.WEB_URL }}
+  terraform:
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    environment: prd
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Format, Validate, Plan & Apply Terraform
+        uses: ./.github/actions/terraform_actions
+        with:
+          aws_access_key_id: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.QUANTTRADE_WWW_GHA_AWS_SECRET_ACCESS_KEY }}
+          aws_region: eu-west-3
+          environment: prd

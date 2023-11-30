@@ -1,4 +1,4 @@
-name: Pull-Request Develop
+name: Pull-Request Production
 on:
   pull_request:
     # Workflow that only runs on PRs towards PRD
