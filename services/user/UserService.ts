@@ -45,19 +45,19 @@ class UserService extends BaseService implements IUserService {
    * The UserService implements the IUserService
    *
    */
-  static USER_REGISTER_URL = `/api/v1/auth/user-register/`;
-  static USER_LOGIN_URL = `/api/v1/auth/user-login/`;
-  static USER_LOGOUT_URL = `/api/v1/auth/user-logout/`;
-  static USER_VERIFY_EMAIL_URL = `/api/v1/auth/user-register/verify-email/`;
-  static USER_REQUEST_EMAIL_VERIFY = `/api/v1/auth/user-register/request-verify-email/`;
-  static USER_LOGIN_REFRESH_TOKEN_URL = `/api/v1/auth/refresh-token/`;
-  static USER_REQUEST_PASSWORD_RESET = `/api/v1/auth/reset/password/`;
-  static USER_VERIFY_PASSWORD_RESET = `/api/v1/auth/verify/reset-password/`;
-  static USER_REQUEST_EMAIL_RESET = `/api/v1/auth/reset/email/`;
-  static USER_VERIFY_EMAIL_RESET = `/api/v1/auth/verify/reset-email/`;
+  static USER_REGISTER_URL = `api/v1/auth/user-register/`;
+  static USER_LOGIN_URL = `api/v1/auth/user-login/`;
+  static USER_LOGOUT_URL = `api/v1/auth/user-logout/`;
+  static USER_VERIFY_EMAIL_URL = `api/v1/auth/user-register/verify-email/`;
+  static USER_REQUEST_EMAIL_VERIFY = `api/v1/auth/user-register/request-verify-email/`;
+  static USER_LOGIN_REFRESH_TOKEN_URL = `api/v1/auth/refresh-token/`;
+  static USER_REQUEST_PASSWORD_RESET = `api/v1/auth/reset/password/`;
+  static USER_VERIFY_PASSWORD_RESET = `api/v1/auth/verify/reset-password/`;
+  static USER_REQUEST_EMAIL_RESET = `api/v1/auth/reset/email/`;
+  static USER_VERIFY_EMAIL_RESET = `api/v1/auth/verify/reset-email/`;
 
-  static AUTHENTICATED_USER_URL = `/api/v1/auth/user/`;
-  static AUTHENTICATED_USER_SETTINGS_URL = `/api/v1/auth/user/settings/`;
+  static AUTHENTICATED_USER_URL = `api/v1/auth/user/`;
+  static AUTHENTICATED_USER_SETTINGS_URL = `api/v1/auth/user/settings/`;
 
   loggedInUserAccessToken: string | null = null;
   loggedInUserRefreshToken: string | null = null;
