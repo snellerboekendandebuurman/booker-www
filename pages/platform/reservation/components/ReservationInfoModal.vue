@@ -144,6 +144,10 @@
                   </dl>
                 </div>
                 <div
+                  v-if="
+                    reservation.status === EReservationStatus.Scheduled ||
+                    reservation.status === EReservationStatus.Rescheduled
+                  "
                   class="flex border-2 border-slate-500 rounded-lg hover:border-slate-300 hover:cursor-pointer bg-slate-200 dark:bg-slate-600"
                 >
                   <div class="flex w-0 flex-1">
