@@ -42,7 +42,7 @@ export default defineNuxtConfig({
         {
           hid: "og:image",
           property: "og:image",
-          content: process.env.BASE_URL + "/booker-logo.png",
+          content: process.env.BASE_URL + "booker-logo.png",
         },
 
         // twitter card
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
         {
           hid: "twitter:image",
           name: "twitter:image",
-          content: process.env.BASE_URL + "/booker-logo.png",
+          content: process.env.BASE_URL + "booker-logo.png",
         },
       ],
       // Setting favicons and other logos
