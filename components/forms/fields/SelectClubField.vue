@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="clientIdValue && shouldDisplayField(clientIdValue as number, 'kntlb')"
+    v-if="clientIdValue && shouldDisplayField(clientIdValue as number, 'knltb')"
   >
     <label
       for="club_id"

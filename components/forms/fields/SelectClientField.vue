@@ -22,7 +22,7 @@
             }}</span>
             <img
               :src="membershipsService.getClient(clientIdValue as number).image"
-              class="h-8 w-32 p-px mr-6"
+              class="h-8 w-auto p-px mr-6"
               alt=""
             />
           </div>
