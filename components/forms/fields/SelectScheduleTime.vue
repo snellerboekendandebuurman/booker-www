@@ -7,7 +7,7 @@
     >
     <div class="flex mt-1 justify-between items-center relative">
       <Field name="schedule_time" class="hidden" />
-      <VueDatePicker v-model="date" time-picker-inline :format="dateFormat"/>
+      <VueDatePicker v-model="date" time-picker-inline :format="dateFormat" />
       <ErrorMessage
         name="schedule_time"
         as="p"
@@ -24,7 +24,7 @@ import "@vuepic/vue-datepicker/dist/main.css";
 const { value: scheduleTimeValue } = useField("schedule_time");
 
 const date = ref(new Date());
-const dateFormat = 'dd/MM/yyyy HH:mm' 
+const dateFormat = "dd/MM/yyyy HH:mm";
 
 watch(date, (newValue, oldValue) => {
   if (newValue !== oldValue) {

@@ -33,7 +33,9 @@
             />
           </div>
           <div v-else-if="membershipsService.memberships.length === 0">
-            <p @click="navigateToMembershipPage">{{ $t("global.fields.select_membership_create_first") }}</p>
+            <p @click="navigateToMembershipPage">
+              {{ $t("global.fields.select_membership_create_first") }}
+            </p>
           </div>
           <div v-else>
             <p>{{ $t("global.fields.select_membership") }}</p>

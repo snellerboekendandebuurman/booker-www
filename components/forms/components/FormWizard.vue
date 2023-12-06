@@ -33,16 +33,16 @@
         >{{ $t("global.save") }}</BaseButton
       > -->
       <BaseButton
-          v-else
-          :button-theme="themeButtonService.getThemeButtonById(8)"
-          :disabled="submitInProgress"
-        >
-          <BaseSpinnerSmall
-            :submit-in-progress="submitInProgress"
-            spinner-text="global.saving"
-            button-text="global.save"
-          />
-        </BaseButton>
+        v-else
+        :button-theme="themeButtonService.getThemeButtonById(8)"
+        :disabled="submitInProgress"
+      >
+        <BaseSpinnerSmall
+          :submit-in-progress="submitInProgress"
+          spinner-text="global.saving"
+          button-text="global.save"
+        />
+      </BaseButton>
     </div>
   </form>
 </template>
