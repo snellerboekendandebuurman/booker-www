@@ -32,6 +32,9 @@
               alt=""
             />
           </div>
+          <div v-else-if="membershipsService.memberships.length === 0">
+            <p @click="navigateToMembershipPage">{{ $t("global.fields.select_membership_create_first") }}</p>
+          </div>
           <div v-else>
             <p>{{ $t("global.fields.select_membership") }}</p>
           </div>
@@ -98,5 +101,13 @@ function selectMembership(option: Membership) {
   membershipsService.selectedClient = option;
 
   isOpen.value = false;
+}
+
+function navigateToMembershipPage() {
+  const localePath = useLocalePath();
+
+  return navigateTo({
+    path: localePath("/platform/membership"),
+  });
 }
 </script>

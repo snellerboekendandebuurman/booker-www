@@ -92,6 +92,7 @@
       "select_authentication_method": "Select Authentication Method",
       "select_client_first": "Select a Client first",
       "select_membership_first": "Select a Membership first",
+      "select_membership_create_first": "Create Membership first",
       "select_sports_type": "Select a sport",
       "sports_type": "Sport",
       "select_membership": "Select a membership",

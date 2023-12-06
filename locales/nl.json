@@ -90,6 +90,7 @@
       "select_authentication_method": "Selecteer een authenticatie metode",
       "select_client_first": "Selecteer eerst een client",
       "select_membership_first": "Selecteer eerst een lidmaatshap",
+      "select_membership_create_first": "Maak eerst een lidmaatschap aan",
       "select_sports_type": "Selecteer een sport",
       "sports_type": "Sport",
       "select_membership": "Selecteer een lidmaatschap",
