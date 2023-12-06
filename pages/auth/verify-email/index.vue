@@ -2,7 +2,7 @@
   <div class="flex h-screen">
     <div class="flex flex-1 flex-col overflow-auto">
       <NuxtLink :to="localePath('/home')" class="mt-2 ml-2" aria-label="Home">
-        ← {{ $t("register.home") }}
+        ← {{ $t("auth.home") }}
       </NuxtLink>
     </div>
     <div class="relative hidden w-0 flex-1 lg:block">
