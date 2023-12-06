@@ -27,11 +27,6 @@
         @click="onSubmit"
         >{{ $t("global.next") }}</BaseButton
       >
-      <!-- <BaseButton
-        v-else
-        :button-theme="themeButtonService.getThemeButtonById(8)"
-        >{{ $t("global.save") }}</BaseButton
-      > -->
       <BaseButton
         v-else
         :button-theme="themeButtonService.getThemeButtonById(8)"
