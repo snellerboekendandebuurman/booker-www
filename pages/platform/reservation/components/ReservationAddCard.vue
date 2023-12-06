@@ -10,13 +10,13 @@
     />
     <div class="flex items-center justify-center py-2">
       {{ $t("platform.reservations.new_reservation") }}
-      <UserIcon class="ml-2 h-7 w-7" aria-hidden="true" />
+      <ClipboardIcon class="ml-2 h-7 w-7" aria-hidden="true" />
     </div>
   </li>
 </template>
 
 <script setup lang="ts">
-import { UserIcon } from "@heroicons/vue/24/outline";
+import { ClipboardIcon } from "@heroicons/vue/24/outline";
 import { PlusIcon } from "@heroicons/vue/20/solid";
 
 defineEmits<{
