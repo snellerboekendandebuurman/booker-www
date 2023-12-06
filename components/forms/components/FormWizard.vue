@@ -60,11 +60,11 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  submitInProgress: Boolean
 });
 
 const emit = defineEmits(["submit", "nextStep", "previousStep", "closeStep"]);
 const currentStepIdx = ref(0);
-const submitInProgress = ref(false);
 
 // Injects the starting step, child <form-steps> will use this to generate their ids
 const stepCounter = ref(0);
@@ -97,11 +97,9 @@ const { handleSubmit } = useForm({
 });
 
 const onSubmit = handleSubmit((values) => {
-  submitInProgress.value = true;
   if (!isLastStep.value) {
     currentStepIdx.value++;
     emit("nextStep", currentStepIdx.value);
-    submitInProgress.value = false;
     return;
   }
 

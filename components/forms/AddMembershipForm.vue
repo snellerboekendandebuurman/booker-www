@@ -2,6 +2,7 @@
   <div>
     <FormWizard
       :validation-schema="validationSchema"
+      :submit-in-progress="submitInProgress"
       @submit="onSubmit"
       @next-step="nextStep"
       @previous-step="previousStep"
@@ -142,6 +143,8 @@ async function onSubmit(values: any) {
       password: values.password,
     },
   });
+
+  submitInProgress.value = false;
 
   if (response.error.value && response.error.value.data) {
     setErrors(response.error.value.data);

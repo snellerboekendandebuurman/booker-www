@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Portal class="z-50">
+    <Portal>
       <ModalMessage />
       <ToastMessage />
     </Portal>

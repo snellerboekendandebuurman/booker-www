@@ -2,6 +2,7 @@
   <div>
     <FormWizard
       :validation-schema="validationSchema"
+      :submit-in-progress="submitInProgress"
       @submit="onSubmit"
       @next-step="nextStep"
       @previous-step="previousStep"
@@ -245,6 +246,8 @@ async function onSubmit(values: any) {
       reservation_time: values.reservation_time,
     },
   });
+
+  submitInProgress.value = false;
 
   if (response.error.value && response.error.value.data) {
     setErrors(response.error.value.data);
