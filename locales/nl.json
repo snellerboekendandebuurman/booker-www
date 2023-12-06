@@ -105,11 +105,11 @@
   },
   "home": {
     "hero_leading_text": "Reserveren kun je leren, of laten doen.",
-    "hero_helper_text": "De flitshandelaar voor jouw favouriete vrijetijdsbesteding!"
+    "hero_helper_text": "De flitshandelaar voor jouw favoriete vrijetijdsbesteding!"
   },
   "pricing": {
     "hero_leading_text": "Leuker kunnen we het niet maken, wel makkelijker",
-    "hero_helper_text": "Betaal per succesvolle reservering, niet per maand.",
+    "hero_helper_text": "Betaal alleen per succesvolle reservering, niet per maand.",
     "card_leading_text": "Betaal alleen als de reservering succesvol is",
     "card_helper_text": "Er wordt alleen geld in rekening gebracht op het moment dat een reservering succesvol is afgerond, niet meer, niet minder.",
     "card_benefits_text": "Wat houdt dat in:",
@@ -118,7 +118,7 @@
     "card_benefit_3": "Bevestigings email vanuit snellerboekendandebuurman",
     "card_benefit_4": "Plan je reservering vooruit",
     "card_price_text": "Prijs per succesvolle reservering",
-    "card_email_text": "U ontvang een bevestiging email met alle informatie na een succesvolle reservering."
+    "card_email_text": "U ontvangt een bevestigings email met alle informatie na een succesvolle reservering."
   },
   "auth": {
     "home": "Thuis",
@@ -173,8 +173,11 @@
     },
     "billing": {
       "logout": "Uitloggen",
-      "setup_payment_intent": "Maak betalingsintentie",
-      "setting_up_payment_intent": "Betalingsintentie maken"
+      "setup_payment_intent": "Koppel betaalgegevens",
+      "setting_up_payment_intent": "Stripe openen",
+      "hero_leading_text": "Voeg uw betaalgegevens toe om te kunnen reserveren!",
+      "hero_helper_text": "Er wordt €1 in rekening gebracht bij een succesvolle reservering.",
+      "card_leading_text": "Koppel een geldig betaal bewijs om een reservering te kunnen inplannen."
     },
     "memberships": {
       "add_membership": "Nieuw lidmaatschap",

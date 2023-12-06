@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import ButtonLogout from "./components/ButtonLogout.vue";
-import PricingInfo from "~/components/pricing/PricingInfo.vue";
+import PricingInfo from "./components/PricingInfo.vue";
 
 import { billingService } from "~/services/billing/BillingService";
 import { apiResponseHandlerService } from "~/services/response/ApiResponseHandlerService";

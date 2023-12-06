@@ -175,8 +175,11 @@
     },
     "billing": {
       "logout": "Logout",
-      "setup_payment_intent": "Create Payment Intent",
-      "setting_up_payment_intent": "Creating Payment Intent"
+      "setup_payment_intent": "Add Payment Detaild",
+      "setting_up_payment_intent": "Opening Stripe",
+      "hero_leading_text": "Add your payment details to make a reservation!",
+      "hero_helper_text": "A charge of €1 is applied for each successful reservation.",
+      "card_leading_text": "Link a valid payment method to schedule a reservation."
     },
     "memberships": {
       "add_membership": "Add Membership",
