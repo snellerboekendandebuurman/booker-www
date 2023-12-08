@@ -55,7 +55,7 @@ const props = defineProps({
     type: Array,
     required: true,
   },
-  submitInProgress: Boolean
+  submitInProgress: Boolean,
 });
 
 const emit = defineEmits(["submit", "nextStep", "previousStep", "closeStep"]);
