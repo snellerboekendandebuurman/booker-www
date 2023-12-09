@@ -1,16 +1,12 @@
 <template>
   <div>
-    <Portal>
-      <ModalMessage />
-      <ToastMessage />
-    </Portal>
-    <div class="sticky top-0 z-10">
-      <TheSidebar :sidebar-open="sidebarOpen" @toggle-sidebar="toggleSidebar" />
-      <TheTopbar :sidebar-open="sidebarOpen" @toggle-sidebar="toggleSidebar" />
-    </div>
+    <TheSidebar :sidebar-open="sidebarOpen" @toggle-sidebar="toggleSidebar" />
+    <TheTopbar :sidebar-open="sidebarOpen" @toggle-sidebar="toggleSidebar" />
     <div class="xl:pl-72">
       <slot class="bg-slate-100 dark:bg-slate-900"></slot>
     </div>
+      <ModalMessage />
+      <ToastMessage />
   </div>
 </template>
 

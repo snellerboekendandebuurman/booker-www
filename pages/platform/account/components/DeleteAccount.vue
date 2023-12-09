@@ -37,6 +37,7 @@ import { EApiResponseStatus } from "~/services/response/EApiResponseHandler";
 import { modalMessageService } from "~/services/response/ModalMessageService";
 
 const { localeProperties } = useI18n();
+const { t } = useI18n();
 
 definePageMeta({
   layout: "auth",
@@ -66,10 +67,6 @@ async function deleteAccount() {
     );
     return;
   }
-  // Log-out current session (rest is done server side)
-  await userService.userLogout({
-    locale: localeProperties.value.iso!,
-  });
 
   // Notify user about success
   modalMessageService.addModal({
@@ -86,6 +83,7 @@ async function deleteAccount() {
       },
     ],
   });
+
   // Refresh page in order to make sure that all the tokens are removed
   setTimeout(() => {
     window.location.reload();
@@ -93,6 +91,10 @@ async function deleteAccount() {
       path: localePath("/auth/login"),
     });
   }, 5000);
+
+  // Log-out current session (rest is done server side)
+  await userService.clearStoredData();
+
 }
 
 const localePath = useLocalePath();

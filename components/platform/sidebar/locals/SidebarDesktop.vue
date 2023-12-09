@@ -1,7 +1,7 @@
 <template>
   <!-- Static sidebar for desktop -->
   <div
-    class="hidden xl:fixed xl:inset-y-0 xl:z-30 xl:flex xl:w-72 xl:flex-col bg-slate-200 dark:bg-gray-900 border-r border-slate-400"
+    class="hidden xl:fixed xl:inset-y-0 xl:z-20 xl:flex xl:w-72 xl:flex-col bg-slate-200 dark:bg-gray-900 border-r border-slate-400"
   >
     <!-- Logo -->
     <div

@@ -3,7 +3,7 @@
   <TransitionRoot as="template" :show="sidebarOpen" class="">
     <Dialog
       as="div"
-      class="relative z-30 xl:hidden"
+      class="relative z-20 xl:hidden"
       @close="$emit('toggleSidebar')"
     >
       <TransitionChild
