@@ -1,6 +1,6 @@
 <template>
   <TransitionRoot as="template" :show="modalOpen">
-    <Dialog as="div" class="relative z-30" @close="closeStep">
+    <Dialog as="div" class="relative z-10">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -11,11 +11,11 @@
         leave-to="opacity-0"
       >
         <div
-          class="z-5 fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"
+          class="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block"
         />
       </TransitionChild>
 
-      <div class="fixed inset-0 w-screen overflow-y-auto">
+      <div @click="closeStep" class="fixed inset-0 w-screen overflow-y-auto">
         <div
           class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4"
         >
@@ -145,6 +145,7 @@ function previousStep(step: number) {
 function closeStep() {
   addMembershipSteps[0].status = EStepStatus.current;
   addMembershipSteps[1].status = EStepStatus.empty;
+  
   emit("toggleModal");
 }
 </script>

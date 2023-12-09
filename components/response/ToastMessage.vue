@@ -22,7 +22,7 @@
           <div
             v-for="message in toastMessageService.displayToastMessages"
             :key="message.title"
-            class="dark:bg-slate-700 pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white ring-1 ring-black ring-opacity-5 drop-shadow-2xl shadow-lg"
+            class="dark:bg-slate-700 z-50 pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white ring-1 ring-black ring-opacity-5 drop-shadow-2xl shadow-lg"
           >
             <div class="p-4">
               <div class="flex items-start">
@@ -47,7 +47,7 @@
                   <button
                     type="button"
                     class="z-50 inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    @click.stop="removeToast($event, message.id)"
+                    @click="removeToast(message.id)"
                   >
                     <span class="sr-only">Close</span>
                     <XMarkIcon
@@ -70,8 +70,7 @@ import { Observer } from "mobx-vue-lite";
 import { XMarkIcon } from "@heroicons/vue/20/solid";
 import { toastMessageService } from "~/services/response/ToastMessageService";
 
-function removeToast(event, messageId) {
+function removeToast(messageId) {
   toastMessageService.removeToast(messageId);
-  event.stopPropagation();
 }
 </script>

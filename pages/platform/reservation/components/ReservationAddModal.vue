@@ -1,6 +1,6 @@
 <template>
   <TransitionRoot as="template" :show="modalOpen">
-    <Dialog as="div" class="relative z-30" @close="closeStep">
+    <Dialog as="div" class="relative z-30">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"
@@ -15,7 +15,9 @@
         />
       </TransitionChild>
 
-      <div class="fixed inset-0 w-screen overflow-y-auto">
+      <div
+        @click="closeStep"
+        class="fixed inset-0 w-screen overflow-y-auto">
         <div
           class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4"
         >

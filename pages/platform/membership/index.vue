@@ -59,13 +59,6 @@ await onBeforeMount(async () => {
 const modalAddOpen = ref(false);
 
 function toggleAddModal() {
-  // This is a little trick, to prevent the user from closing
-  // the modal while they actually press the close button
-  // from a toastmessage.
-  // if (toastMessageService.toastMessagesQueue.length !== 0) {
-  //   return;
-  // }
-
   membershipsService.selectedClub = null;
   modalAddOpen.value = !modalAddOpen.value;
 }
