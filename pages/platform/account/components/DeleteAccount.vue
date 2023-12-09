@@ -94,7 +94,6 @@ async function deleteAccount() {
 
   // Log-out current session (rest is done server side)
   await userService.clearStoredData();
-
 }
 
 const localePath = useLocalePath();

@@ -15,9 +15,7 @@
         />
       </TransitionChild>
 
-      <div
-        @click="closeStep"
-        class="fixed inset-0 w-screen overflow-y-auto">
+      <div @click="closeStep" class="fixed inset-0 w-screen overflow-y-auto">
         <div
           class="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4"
         >

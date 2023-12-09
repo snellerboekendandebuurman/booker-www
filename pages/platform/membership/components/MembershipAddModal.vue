@@ -145,7 +145,7 @@ function previousStep(step: number) {
 function closeStep() {
   addMembershipSteps[0].status = EStepStatus.current;
   addMembershipSteps[1].status = EStepStatus.empty;
-  
+
   emit("toggleModal");
 }
 </script>
